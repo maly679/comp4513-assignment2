@@ -885,24 +885,15 @@ button.link {
   background-color: rgba(50, 224, 195, 0.918);
   transition: all 0.7s;
 }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 .fade-appear {
   opacity: 0;
   transform: scale(0.2);
 }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 .fade-appear-active {
   opacity: 1;
   transform: scale(1);
   transition: all 1000ms;
-<<<<<<< Updated upstream
+
 }
-=======
-}
->>>>>>> Stashed changes

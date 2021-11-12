@@ -79,11 +79,7 @@ function App() {
       <Route path="/home" exact component={HomePage}/>
         <Route path="/default">
           
-        { isLoading === true ?  ( 
-            console.log(isLoading)
-        )
-     : 
- 
+  
 
         <DefaultPage
               mainData={data}
@@ -100,8 +96,7 @@ function App() {
               updateFaveBox={updateFaveBox}
 
             />
-            
-        }
+          
         </Route>
       <Route path="/playDetails">
 
