@@ -1,0 +1,908 @@
+main {
+  height:100%;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  ul.nav {
+    display: flex;
+    margin-right: 3rem;
+    padding-bottom: 1.29rem;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+  }
+  ul.nav li {
+    width: 100%;
+    padding: 1rem;
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.7s;
+  }
+
+
+
+  ul.nav li:hover {
+    background: rgba(50, 224, 196, 0.15);
+  }
+  ul.nav li.active {
+    background: #39A2DB;
+  }
+
+
+.playDetailsPage {
+  display: grid;
+  grid-template-rows: 0.5fr;
+  gap: 1rem;
+  font-family: serif;
+  background-color: rgba(50, 224, 196, 0.15); 
+  height: 100vh;
+  width: 100%;
+}
+
+#playDetailsBox {
+  display: grid;
+  padding-right: 3vh;
+  width: auto;
+  height: 88vh;
+  grid-template-columns: 0.5fr 3fr 4fr;
+  gap: 1rem;
+  font-family: serif;
+
+}
+
+#detailsFavoriteList {
+  height: 88vh;
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+
+}
+
+#playTitleBox {
+  height: 88vh;
+  grid-column: 2;
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  border-radius: 10px;
+  color: white;
+  
+}
+
+#checkAndTitle {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+}
+#playTitle {
+  text-align: center;
+  grid-column: 2;
+  font-size: 4vh;
+}
+
+ hr {
+  padding: 0.4px;
+
+}
+
+#synopsisBox {
+  text-align: center;
+  line-height: 2;
+  font-weight: 500;
+  padding: 35px 40px 10px 40px;
+  font-size: 1.5vh;
+
+}
+
+#tabsBox {
+
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  border-radius: 10px;
+  color: white;
+  height: 88vh;
+  grid-column: 3;
+}
+
+.outlet {
+  margin:4px, 8px;
+  padding: 0px 15px 4px 15px;
+  width: auto;
+  text-align:justify;
+  height: 68vh;
+  
+}
+
+.allPlayers {
+  display: grid;
+  padding: 1rem 3rem 0rem 1rem;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  
+}
+
+#tabHR {
+  padding-bottom: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.homePage{
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1553782749-5ab8693a5f4f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1078&q=80");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#homeSearch {
+  height: 20%;
+  width: 50vh;
+  background: rgba(83, 98, 139, 0.993); 
+  border-radius: 1rem;
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 37.5%;
+  margin-right: 37.5%;
+  margin-bottom: 20%;
+  border-style: solid;
+  border-color: rgba(255, 0, 0, 0.431);
+}
+
+
+#homeTitleInput {
+  position: relative;
+  margin-top: 8%;
+  margin-bottom: 1vh;
+  margin-left: 18%;
+  margin-right: 18%;
+}
+
+#homeTitleInput input {
+  width: 30vh;
+  padding: 5%;
+  border-radius: 0.6rem;
+  border-style: solid;
+  border-color: goldenrod;
+}
+
+#homeTitleInput input:hover {
+  border-style: solid;
+  border-color: black;
+  border-width: 4px;
+  transition: all 0.6s;
+}
+
+
+#homeButtons {
+  margin-left: 17%;
+  margin-right: 10%;
+  margin-bottom: 50%;
+  width: 33.5vh;
+}
+
+#homeButtons button {
+  
+  cursor: pointer;
+  background: #39A2DB;
+  color: white;
+  border-radius: 0.4rem;
+  font-size: 1.2vh;
+  width: 16.75vh;
+  height: 5vh;
+}
+
+#homeButtons button:hover {
+  background: rgba(50, 224, 196, 0.15);
+  transition: all 0.7s;
+  color: rgb(211, 211, 211);
+  font-size: 1.1vh;
+}
+
+#matchingButton {
+  display: inline-block;
+  
+  
+}
+
+#showAllButton {
+  display: inline-block;
+}
+
+#heroCredit {
+  position: absolute;
+  color: white;
+  bottom: 50px;
+  margin-left: 42%;
+  margin-right: 42%;
+}
+
+#heroCredit a {
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+.SearchContainer {
+  background-color: lightblue;
+}
+
+#formBox {
+  margin-top: 25px;
+  margin-right: 10px;
+  margin-left: 30px;
+}
+
+#textFilterBox {
+  margin-top: 0.8rem;
+}
+#actBox {
+  padding-bottom: 2rem;
+}
+
+#textFilterBox select {
+  width: 10rem;
+  font-weight:700;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+#textFilterBox #act {
+  margin-right: 1rem;
+}
+
+.playerSearch {
+  margin-top: 2rem;
+}
+
+.playerSearch select {
+  width: 10rem;
+  font-weight:700;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.playerSearch #highlightedWord {
+  margin-top: 1rem;
+}
+
+.playerSearch input {
+  width: 9rem;
+  padding: 0.4rem;
+  font-weight: 700;
+}
+
+.textFilterBox {
+  padding-top: 1.5rem;
+}
+
+#playDetailsButtons {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 39vh;
+}
+
+#textPlayDetailsButtons {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 22vh;
+  
+}
+
+#playDetailsButtons button,#textPlayDetailsButtons button {
+  color: white;
+  width: 8rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: #39A2DB;
+  border-radius: 0.5rem;
+}
+
+#textPlayDetailsButtons #likeButton {
+  color: red;
+
+}
+#playDetailsButtons #likeButton{
+  color: red;
+}
+
+#closeButton {
+  margin-right: 1rem;
+  color:white;
+}
+
+#likeButton {
+  font-size: 2.5vh;
+}
+
+#playDetailsButtons button:hover ,#textPlayDetailsButtons button:hover {
+  background: rgba(50, 224, 196, 0.15);
+  transition: all 0.7s;
+  font-size: 2.8vh;
+}
+
+
+#speakerSpeeches {
+  padding-top: 20px;
+  padding-right: 10px;
+  overflow-x: hidden;
+  overflow-y:auto;
+  height: 45vh;
+  
+}
+
+#deleteButton {
+  align-content: center;
+  color: white;
+  width: 6rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: #39A2DB;
+  border-radius: 0.5rem;
+}
+
+#deleteButton:hover {
+  font-size: 1.8vh;
+  padding:0.3rem;
+  transition: all 1s;
+}
+
+
+
+/* Default page CSS*/
+
+.defaultPage {
+  display: grid;
+  grid-template-rows: 0.5fr;
+  gap: 1rem;
+  font-family: serif;
+  background: rgba(50, 224, 196, 0.15); 
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-height: 700px) {
+  .defaultPage {
+    height: 100%;
+    overflow-y: hidden;
+
+  }
+}
+
+#headerBar {
+  
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
+}
+
+#homeLogoButton {
+  grid-column: 1;
+  margin-left: 2vh;
+  margin-top: 0.5vh;
+}
+
+#aboutButton {
+  grid-column: 3;
+}
+
+button {
+  border-style:solid;
+  border-color: lightblue;
+}
+
+#aboutButton button {
+  margin-left: 38vh;
+  margin-top: 0.5vh;
+  color: white;
+  width: 4rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: #39A2DB;
+  border-radius: 0.5rem;
+}
+
+#aboutButton button:hover {
+  background: rgba(50, 224, 195, 0.445);
+  transition: all 0.7s;
+  color: rgb(211, 211, 211);
+}
+
+#defaultPageInfoBox {
+  display: grid;
+  padding-right: 20px;
+  width: auto;
+  height: 88vh;
+  grid-template-columns: 0.5fr 3fr 4fr;
+  gap: 1rem;
+  font-family: serif;
+
+  
+}
+
+#defaultFavoriteBox {
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  height: 85vh;
+  
+}
+
+#favoritesBox {
+  font-size: 2vh;
+}
+
+#favoritesList {
+  overflow-x: hidden;
+  overflow-y:auto;
+  height: 70vh;
+}
+
+#filterBox {
+  height: 85vh;
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  color: white;
+  border-radius: 10px;
+}
+
+#filtersAndCheck {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 0.5fr;
+  
+}
+
+
+#checkBoxDiv {
+
+  grid-column: 1;
+  align-self: center;
+  padding-left: 2vh;
+}
+
+#checkBoxDiv [type='checkbox'] {
+  width: 3vh;
+  height: 3vh;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+  cursor: pointer;
+}
+
+#checkBoxDiv [type='checkbox']:checked {
+  visibility: visible;
+  opacity: 1;
+  
+  transition: all 0.7s;
+}
+
+#filterTitle {
+  text-align: center;
+  grid-column: 2;
+  font-size: 3.5vh;
+
+}
+
+#listBox {
+  height: 85vh;
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  color: white;
+  border-radius: 10px;
+  font-size: 2vh;
+}
+
+#listTitle {
+  text-align: center;
+}
+
+#listPlayBox {
+ 
+  padding: 1rem 2rem 2rem 1rem;
+  overflow-x: hidden;
+  overflow-y:auto;
+  height: 52vh;
+}
+
+#listHeader {
+  padding: 0 0 0rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 0.5fr 0.8fr;
+}
+
+#titleLabel {
+  width: 25vh;
+  grid-column: 1;
+}
+
+#listLabel {
+  width: 10vh;
+  grid-column: 2;
+}
+
+#playInfoTitle {
+  width: 25vh;
+}
+
+#playDate {
+  grid-column: 3;
+  width: 10vh;
+}
+
+#listBoxItems{
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr 1fr;
+  
+}
+
+#listBoxItems:hover {
+  font-size: 2.1vh;
+  background-color: #c9c9c9;
+  transition: all 0.8s;
+  border-radius: 10px;
+
+}
+
+#playListButtons {
+  width: 35vh;
+  grid-column: 4;
+}
+#playListButtons button {
+  margin-top: 1.4vh;
+  margin-left: 5vh;
+  color: white;
+  width: 4rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: #39A2DB;
+  border-radius: 0.5rem;
+}
+#playListButtons #likeButton {
+  color:red;
+}
+
+#playListButtons #likeButton:hover {
+}
+
+#playListButtons #likeButton:focus {
+  padding: 0.4rem;
+  font-size: 2vh;
+  transition: all 0.7s;
+
+}
+
+#playListButtons button:hover {
+  background: rgba(50, 224, 195, 0.445);
+  transition: all 0.7s;
+  color: rgb(211, 211, 211);
+  font-size: 2.5vh;
+}
+
+#filterContentBox {
+  padding: 2em;
+}
+
+#searchTitleBox label{
+  font-weight: 600;
+  font-size: 2.5vh;
+}
+
+#searchTitleInput {
+  margin-top: 1vh;
+  padding: 0.8vh;
+  width: 12vh;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+#searchTitleInput:hover {
+  transition: all 1s;
+  width: 28vh;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #39A2DB;
+}
+
+#searchYearBox {
+  padding-top: 3vh;
+}
+
+#yearTitle {
+  font-weight: 600;
+  font-size: 2.5vh;
+
+}
+
+#beforeCheckBox {
+  display: inline-block;
+}
+
+#beforeCheckBox input[type='checkbox'], #afterCheckBox input[type='checkbox']{
+  -webkit-appearance:none;
+    width: 2vh;
+    height:2vh;
+    background:white;
+    border-radius:50em;
+    border:2px solid #555;
+    cursor: pointer;
+}
+
+#beforeCheckBox input[type='checkbox']:checked, #afterCheckBox input[type='checkbox']:checked {
+  background: #adf;
+}
+
+#beforeSearch {
+  margin-top: 1vh;
+}
+
+#labelBefore {
+  padding-left: 4vh;
+  font-weight: 600;
+  font-size: 2vh;
+}
+
+#inputBefore {
+  margin-left: 4vh;
+  padding: 0.8vh;
+}
+
+#afterSearch {
+  margin-top: 1vh;
+}
+
+#labelAfter {
+  padding-left: 4vh;
+  font-weight: 600;
+  font-size: 2vh;
+}
+
+#inputAfter {
+  margin-left: 5vh;
+  padding: 0.8vh;
+}
+
+#genreBox {
+  margin-top: 3vh;
+}
+
+#genreBox label {
+  font-weight: 600;
+  font-size: 2.5vh;
+}
+
+#genre {
+  margin-top: 1vh;
+  padding: 0.8vh;
+  width: 30vh;
+  
+}
+
+#genre:hover {
+  border-radius: 3px;
+}
+
+#genre option {
+  font-weight: 600;
+}
+
+#filterButtons {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 15vh;
+}
+
+#filterButtons button {
+  color: white;
+  width: 8rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  background: #39A2DB;
+  border-radius: 0.5rem;
+}
+
+#filterButton {
+  margin-right: 1rem;
+  font-size: 2vh;
+}
+
+#clearButton {
+  font-size: 2  vh;
+}
+
+#filterButton:hover {
+  background: rgba(50, 224, 196, 0.15);
+  padding: 0.45rem;
+  transition: all 1s;
+  font-size: 1.8vh;
+}
+
+#clearButton:hover {
+  background: rgba(50, 224, 196, 0.15);
+  padding: 0.45rem;
+  transition: all 1s;
+  font-size: 1.8vh;
+}
+
+#favoriteItem {
+  
+}
+
+#favoriteItem p:hover {
+  font-size: 2.1vh;
+  background-color: #c9c9c9;
+  transition: all 0.7s;
+  border-radius: 10px;
+}
+
+button.link {
+  background: none;
+  border: none;
+  color:white;
+  cursor: pointer;
+  margin-bottom: 2vh;
+}
+
+#loader {
+  /*background-image: url("./loadingGif/simpson.gif");*/
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.DetailsTab {
+  font-size: 1.5vh;
+}
+
+.CharactersTab {
+  font-size: 1.5vh;
+  overflow-x: hidden;
+  overflow-y:auto;
+  height: 65vh;
+}
+
+.TextTab {
+  font-size: 1.5vh;
+}
+
+#hiddenFaveBox {
+  width: 50%;
+  height: 88vh;
+  background: #053742;
+  border-style: solid;
+  border-color: lightseagreen;
+  border-radius: 10px;
+  transition: opacity 2s;
+}
+
+#modal {
+  background-color: #053742;
+}
+
+#modalBackground {
+  background-color: #053742;
+  color: white;
+  border-radius: 10px;
+  padding: 2vh;
+  margin-top: 2vh;
+}
+
+#modalBackground a {
+  text-decoration: none;
+  color:white;
+}
+
+#modalButton {
+  cursor: pointer;
+  background: #39A2DB;
+  color: white;
+  border-radius: 0.4rem;
+  font-size: 2vh;
+  width: 16.75vh;
+  height: 5vh;
+}
+
+#modalButton:hover {
+  font-size: 2.5vh;
+  background-color: rgba(50, 224, 195, 0.918);
+  transition: all 0.7s;
+}
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+.fade-appear {
+  opacity: 0;
+  transform: scale(0.2);
+}
+<<<<<<< Updated upstream
+
+=======
+>>>>>>> Stashed changes
+.fade-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 1000ms;
+<<<<<<< Updated upstream
+}
+=======
+}
+>>>>>>> Stashed changes
