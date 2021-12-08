@@ -16,7 +16,7 @@ function App() {
 
 
 const logout = () => {
-  window.location.assign('http://localhost:8080/logout');
+  window.location.assign('https://comp4513-assignment2.herokuapp.com/logout');
 }
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const logout = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "http://localhost:8080/user",
+      url: "https://comp4513-assignment2.herokuapp.com/api/user/1",
     }).then((res) => {
       setUserData(res.data);
       console.log(res.data);
@@ -32,6 +32,8 @@ const logout = () => {
 
  
 },  []);
+
+//http://localhost:8080/user
 
 // const populateAllPlays = () => {
 //   Axios({
@@ -52,7 +54,7 @@ useEffect(() => {
   Axios({
     method: "GET",
     withCredentials: true,
-    url: "http://localhost:8080/api/list",
+    url: "https://comp4513-assignment2.herokuapp.com/api/list",
   }).then((res) => {
     console.log(res.data);
     localStorage.setItem("playData", JSON.stringify(res.data));
