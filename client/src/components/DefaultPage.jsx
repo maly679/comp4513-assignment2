@@ -9,6 +9,7 @@ import { CSSTransition } from "react-transition-group";
 import loadingGif from '../loadingGif/giphy.gif';
 
 const DefaultPage = (props) => {
+
   const location = useLocation();
     //check if matches are found from filter.
   const [matchesFound, setMatchesFound] = useState(true);
@@ -215,7 +216,7 @@ const DefaultPage = (props) => {
 
   return (
     <div className="defaultPage">
-      <HeaderBar />
+      <HeaderBar userData = {props.userData} logout = {props.logout}/>
       <div id="defaultPageInfoBox">
         {props.showFavorites && props.isChecked === false ? (
           <div id="defaultFavoriteBox">
@@ -238,6 +239,8 @@ const DefaultPage = (props) => {
           updateFaveBox={props.updateFaveBox}
         />
         <ListBox
+          userData = {props.userData} 
+          logout = {props.logout}
           plays={props.plays}
           addToLike={props.addToLike}
           removeFromLike={props.removeFromLike}

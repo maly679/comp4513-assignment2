@@ -20,6 +20,8 @@ const ListBoxItem = (props) => {
       });
   };
 
+  const userInfo = {userData: props.userData, logout: props.logout};
+
   return (
     <div id="listBoxItems">
       <p id="playInfoTitle">{props.play.title}</p>c
@@ -34,7 +36,7 @@ const ListBoxItem = (props) => {
           ❤
         </button>
         </CSSTransition>
-        <Link to="/playDetails">
+        <Link to={{ pathname: "/playDetails", state: {userInfo: userInfo}}}>
           <button type="button" onClick={currentPlay}>
             View
           </button>

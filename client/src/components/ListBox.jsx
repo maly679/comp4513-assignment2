@@ -45,6 +45,8 @@ const ListBox = (props) => {
             <div id="listPlayBox">
               {props.plays.map((p, index) => (
                 <ListBoxItem
+                  userData = {props.userData} 
+                  logout = {props.logout}
                   play={p}
                   addToLike={props.addToLike}
                   updateCurrent={props.updateCurrent}

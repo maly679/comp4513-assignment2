@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
+import ProfileModal from "react-modal";
 
-const HeaderBar = () => {
+const HeaderBar = (props) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const [profileModalIsOpen, setProfileModalIsOpen] = useState(false);
   const openModal = () => {
     setIsOpen(true);
   };
 
+  
   const openProfileModal = () => {
-    setProfileModalIsOpen = true;
+    setProfileModalIsOpen(true);
   }
-
+const closeProfileModal = () => {
+  setProfileModalIsOpen(false);
+}
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -26,13 +30,17 @@ const HeaderBar = () => {
       </div>
 
       <div id="profileButton">
-      <button onClick={openModal} type="button">
+      <button onClick={openProfileModal} type="button">
           Profile
       </button>
       </div>
-
+      <div id="profileButton">
+      <button onClick={props.logout} type="button">
+          logout
+      </button>
+      </div>
       <div id="aboutButton">
-        <button onClick={openProfileModal} type="button">
+        <button onClick={openModal} type="button">
           About
         </button>
       </div>
@@ -71,6 +79,19 @@ const HeaderBar = () => {
 
         </div>
       </Modal>
+      <ProfileModal id ="modal" isOpen={profileModalIsOpen} onRequestClose={closeProfileModal}>
+      <div>
+        <img src = {props.userData.picture.thumbnail}/> 
+        <h1>{props.userData.details.firstname}</h1>
+        <h2>{props.userData.details.lastname}</h2>
+        <h2>{props.userData.details.city}</h2>
+        <h2>{props.userData.details.country}</h2>
+        <h2>{props.userData.membership.date_joined}</h2>
+
+      
+      </div>
+
+      </ProfileModal>
     </div>
   );
 };

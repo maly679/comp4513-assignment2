@@ -3,6 +3,7 @@ import HeaderBar from "./HeaderBar";
 import FavoriteBoxDetails from "./FavoritesBoxDetails";
 import Tabs from "./TabComponent/Tabs";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "../App.css";
 
 const PlayDetailPage = (props) => {
@@ -11,6 +12,8 @@ const PlayDetailPage = (props) => {
   const [currentScene, setCurrentScene] = useState("SCENE I");
   const [currentSpeaker, setCurrentSpeaker] = useState("");
   const [highlightedWord, setHighlightedWord] = useState("");
+
+  const location = useLocation();
 
   const tabIsText = (tab) => {
     setTab(tab);
@@ -77,7 +80,7 @@ const PlayDetailPage = (props) => {
 
     return (
       <div className="playDetailsPage">
-        <HeaderBar></HeaderBar>
+        <HeaderBar userData = {props.location.state.userData} logout = {props.location.state.logout}></HeaderBar>
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
@@ -200,7 +203,7 @@ const PlayDetailPage = (props) => {
   } else {
     return (
       <div className="playDetailsPage">
-        <HeaderBar></HeaderBar>
+        <HeaderBar userData = {location.state.userInfo.userData} logout = {location.state.userInfo.logout}/> 
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
