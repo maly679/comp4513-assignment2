@@ -3,9 +3,12 @@ main {
   width: 100%;
 }
 
+@import '~antd/dist/antd.css';
+
 .App {
   text-align: center;
   height: 100vh;
+  
 }
 
 .App-logo {
@@ -43,6 +46,8 @@ main {
   }
 }
 
+
+
   ul.nav {
     display: flex;
     margin-right: 3rem;
@@ -60,6 +65,7 @@ main {
     text-align: center;
     cursor: pointer;
     transition: all 0.7s;
+    color: black;
   }
 
 
@@ -69,6 +75,7 @@ main {
   }
   ul.nav li.active {
     background: #39A2DB;
+    border-radius: 5px;
   }
 
 
@@ -95,10 +102,10 @@ main {
 
 #detailsFavoriteList {
   height: 88vh;
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
-  color: white;
+  color: black;
   text-align: center;
   border-radius: 10px;
 
@@ -107,11 +114,11 @@ main {
 #playTitleBox {
   height: 88vh;
   grid-column: 2;
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
   border-radius: 10px;
-  color: white;
+  color: black;
   
 }
 
@@ -141,11 +148,11 @@ main {
 
 #tabsBox {
 
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
   border-radius: 10px;
-  color: white;
+  color: black;
   height: 88vh;
   grid-column: 3;
 }
@@ -175,7 +182,7 @@ main {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: lightgray; 
 }
 
 ::-webkit-scrollbar-thumb {
@@ -214,28 +221,18 @@ main {
   position: relative;
   margin-top: 8%;
   margin-bottom: 1vh;
-  margin-left: 18%;
-  margin-right: 18%;
+  margin-left: 15%;
+  margin-right: 15%;
+
 }
 
 #homeTitleInput input {
-  width: 30vh;
-  padding: 5%;
+  width: 26vh;
   border-radius: 0.6rem;
-  border-style: solid;
-  border-color: goldenrod;
 }
-
-#homeTitleInput input:hover {
-  border-style: solid;
-  border-color: black;
-  border-width: 4px;
-  transition: all 0.6s;
-}
-
 
 #homeButtons {
-  margin-left: 17%;
+  margin-left: 16.8%;
   margin-right: 10%;
   margin-bottom: 50%;
   width: 33.5vh;
@@ -252,11 +249,11 @@ main {
   height: 5vh;
 }
 
+
 #homeButtons button:hover {
   background: rgba(50, 224, 196, 0.15);
   transition: all 0.7s;
   color: rgb(211, 211, 211);
-  font-size: 1.1vh;
 }
 
 #matchingButton {
@@ -376,17 +373,18 @@ a:visited {
 
 #closeButton {
   margin-right: 1rem;
+  font-size: 2vh;
   color:white;
 }
 
 #likeButton {
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 #playDetailsButtons button:hover ,#textPlayDetailsButtons button:hover {
   background: rgba(50, 224, 196, 0.15);
   transition: all 0.7s;
-  font-size: 2.8vh;
+  
 }
 
 
@@ -409,9 +407,9 @@ a:visited {
   border-radius: 0.5rem;
 }
 
+
 #deleteButton:hover {
-  font-size: 1.8vh;
-  padding:0.3rem;
+  font-size: 1.9vh;
   transition: all 1s;
 }
 
@@ -439,11 +437,12 @@ a:visited {
 
 #headerBar {
   
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
   display: grid;
   grid-template-columns: 0.5fr 1fr 0.5fr;
+  padding-bottom: 0.8rem;
 }
 
 #homeLogoButton {
@@ -452,8 +451,10 @@ a:visited {
   margin-top: 0.5vh;
 }
 
-#aboutButton {
-  grid-column: 3;
+#menuDropdown {
+  grid-column: 4;
+  float: right;
+  background-color: #F8F8F8;
 }
 
 button {
@@ -461,22 +462,7 @@ button {
   border-color: lightblue;
 }
 
-#aboutButton button {
-  margin-left: 38vh;
-  margin-top: 0.5vh;
-  color: white;
-  width: 4rem;
-  padding: 0.4rem;
-  cursor: pointer;
-  background: #39A2DB;
-  border-radius: 0.5rem;
-}
 
-#aboutButton button:hover {
-  background: rgba(50, 224, 195, 0.445);
-  transition: all 0.7s;
-  color: rgb(211, 211, 211);
-}
 
 #defaultPageInfoBox {
   display: grid;
@@ -491,7 +477,7 @@ button {
 }
 
 #defaultFavoriteBox {
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
   color: white;
@@ -513,10 +499,10 @@ button {
 
 #filterBox {
   height: 85vh;
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
-  color: white;
+  color: black;
   border-radius: 10px;
 }
 
@@ -557,10 +543,10 @@ button {
 
 #listBox {
   height: 85vh;
-  background: #053742;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
-  color: white;
+  color: black;
   border-radius: 10px;
   font-size: 2vh;
 }
@@ -609,11 +595,11 @@ button {
 }
 
 #listBoxItems:hover {
-  font-size: 2.1vh;
+  font-size: 2vh;
   background-color: #c9c9c9;
   transition: all 0.8s;
   border-radius: 10px;
-
+  cursor: pointer;
 }
 
 #playListButtons {
@@ -625,16 +611,13 @@ button {
   margin-left: 5vh;
   color: white;
   width: 4rem;
-  padding: 0.4rem;
+  padding: 0.3rem;
   cursor: pointer;
   background: #39A2DB;
   border-radius: 0.5rem;
 }
 #playListButtons #likeButton {
   color:red;
-}
-
-#playListButtons #likeButton:hover {
 }
 
 #playListButtons #likeButton:focus {
@@ -647,8 +630,12 @@ button {
 #playListButtons button:hover {
   background: rgba(50, 224, 195, 0.445);
   transition: all 0.7s;
-  color: rgb(211, 211, 211);
-  font-size: 2.5vh;
+}
+
+#playListButtons #viewButton:focus {
+  padding: 0.4rem;
+  font-size: 2vh;
+  transition: all 0.7s;
 }
 
 #filterContentBox {
@@ -696,7 +683,7 @@ button {
   -webkit-appearance:none;
     width: 2vh;
     height:2vh;
-    background:white;
+    background:#F8F8F8;
     border-radius:50em;
     border:2px solid #555;
     cursor: pointer;
@@ -753,18 +740,14 @@ button {
 }
 
 #genre:hover {
-  border-radius: 3px;
-}
-
-#genre option {
-  font-weight: 600;
+  cursor: pointer;
 }
 
 #filterButtons {
   display: flex;
   justify-content:center;
   align-items: center;
-  margin-top: 15vh;
+  margin-top: 8vh;
 }
 
 #filterButtons button {
@@ -782,29 +765,25 @@ button {
 }
 
 #clearButton {
-  font-size: 2  vh;
+  font-size: 2vh;
 }
 
 #filterButton:hover {
-  background: rgba(50, 224, 196, 0.15);
-  padding: 0.45rem;
+  background: rgba(50, 224, 195, 0.445);
   transition: all 1s;
-  font-size: 1.8vh;
 }
 
 #clearButton:hover {
-  background: rgba(50, 224, 196, 0.15);
-  padding: 0.45rem;
+  background: rgba(50, 224, 195, 0.445);
   transition: all 1s;
-  font-size: 1.8vh;
 }
 
-#favoriteItem {
-  
+#favoriteItem a{
+  color: black;
 }
 
-#favoriteItem p:hover {
-  font-size: 2.1vh;
+#favoriteItem:hover {
+
   background-color: #c9c9c9;
   transition: all 0.7s;
   border-radius: 10px;
@@ -845,45 +824,28 @@ button.link {
 
 #hiddenFaveBox {
   width: 50%;
-  height: 88vh;
-  background: #053742;
+  height: 85vh;
+  background: #F8F8F8;
   border-style: solid;
   border-color: lightseagreen;
   border-radius: 10px;
-  transition: opacity 2s;
 }
 
-#modal {
-  background-color: #053742;
+.aboutModal a {
+  color: black;
 }
 
-#modalBackground {
-  background-color: #053742;
-  color: white;
-  border-radius: 10px;
-  padding: 2vh;
-  margin-top: 2vh;
+.aboutModal a:hover{
+  color: rgb(92, 164, 223);
 }
 
-#modalBackground a {
-  text-decoration: none;
-  color:white;
+.profileModal img {
+  width: 25%;
+  border-radius: 100px;
 }
 
-#modalButton {
-  cursor: pointer;
-  background: #39A2DB;
-  color: white;
-  border-radius: 0.4rem;
-  font-size: 2vh;
-  width: 16.75vh;
-  height: 5vh;
-}
-
-#modalButton:hover {
-  font-size: 2.5vh;
-  background-color: rgba(50, 224, 195, 0.918);
-  transition: all 0.7s;
+#profileimg {
+  text-align: center;
 }
 
 .fade-appear {

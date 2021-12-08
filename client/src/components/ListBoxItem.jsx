@@ -37,7 +37,7 @@ const ListBoxItem = (props) => {
         </button>
         </CSSTransition>
         <Link to={{ pathname: "/playDetails", state: {userInfo: userInfo}}}>
-          <button type="button" onClick={currentPlay}>
+          <button type="button" id="viewButton" onClick={currentPlay}>
             View
           </button>
         </Link>

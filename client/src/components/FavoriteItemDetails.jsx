@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { message} from 'antd';
 
 const FavoriteItemDetails = (props) => {
-  const remove = () => {
+  const info = () => {
     props.removeFromLike(props.play);
-    alert(props.play.title + " has been removed from favorite");
+    message.info(props.play.title + " has been removed");
   };
 
   const updateCurrentPlay = () => {
@@ -28,7 +29,7 @@ const FavoriteItemDetails = (props) => {
 
       </Link>
 
-      <button type="button" id="deleteButton" onClick={remove}>
+      <button type="button" id="deleteButton" onClick={info}>
         Remove
       </button>
     </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const FilterBox = (props) => {
   const [filter, updateFilter] = useState({});
   const [beforeCheck, setBeforeCheck] = useState({status: true})

@@ -3,7 +3,6 @@ import DefaultPage from "./components/DefaultPage";
 import PlayDetailPage from "./components/PlayDetailPage";
 import { HashRouter, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import loadingGif from './loadingGif/giphy.gif';
 import Axios from "axios";
 
 function App() {
@@ -12,14 +11,9 @@ function App() {
   const [filteredData, setFilteredData] = useState([]);
   const [like, setLike] = useState([]);
   const [currentPlay, setCurrentPlay] = useState([]);
-  const [isLoading, setLoading] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
   const [showFavorites, setShowFavorites] = useState(true); 
 
-  const updateisLoading = () => { setLoading(false) 
-  console.log(isLoading);
-  
-  }
 
 const logout = () => {
   window.location.assign('http://localhost:8080/logout');
