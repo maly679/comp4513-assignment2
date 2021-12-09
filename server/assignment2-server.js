@@ -65,7 +65,7 @@ const corsWithOptions = cors(corsOptionsDelegate);
 app.route('/')
 .options(corsWithOptions, (req, res) => { res.sendStatus(200); })
 .get(cors(), (req, res)=>{
-     res.redirect('https://comp4513-assignment2.herokuapp.com/user')
+     res.redirect('https://comp4513-assignment2.herokuapp.com')
 });
 
 // use the route handlers
