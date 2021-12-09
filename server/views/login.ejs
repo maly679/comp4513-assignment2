@@ -3,39 +3,56 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"> -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+      <!-- 
+         Css template reference here https://medium.com/@joseph.a.guzzardo/creating-a-login-with-bulma-2ab75b9695ac 
+         https://bulma.io/documentation/helpers/color-helpers/
+      -->
    <body>
 
-      <section class="section">
-         <div class="container">
-            <h1 class="title">Login</h1>
-            <div class="box">
-               <form action="/login" method="post">
-                  <div class="field">
-                     <label class="label">Email</label>
-                     <div class="control">
-                        <input class="input" type="email" placeholder="e.g. zpochet2@apple.com" name="email" id="email">
-                     </div>
-                  </div>
-                  
-                  <div class="field">
-                     <label class="label">Password</label>
-                     <div class="control">
-                        <input class="input" type="password" name="password" id="password" placeholder="mypassword">
-                     </div>
-                  </div>
-                  <div class="control">
-                     <button type="submit" class="button is-link">Login Locally</button>
-                  </div>
-		  <% if (message) { %>
-		       <p id="msg2" class="help is-danger">
-			  <%= message %>
-		       </p>
-		  <% } %>
-                  
-               </form>
+      <div class="hero is-fullheight is-primary">
+         <div class="hero-body">
+            <div class="container has-text-centered">
+
+              <div class="column is-8 is-offset-2">
+               <h3 class="title has-text-white">Login</h3>
+               <hr class="login-hr">
+              </div>
+
+              <div class="box">
+               <div class="box">
+                 <a href="https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/shakespeares-plays/"> <img src="https://media.shakespeare.org.uk/images/8_SmKWXRQ.c7614399.fill-1200x600-c75.png" title="Click for image website"> </a>
+               </div>
+
+
+             </div>
+
+             <form action="/login" method="post">
+               <div class="field">
+                 <div class="control">
+                   <input class="input is-large" type="email" placeholder="zpochet2@apple.com" name="email" id="email">
+                 </div>
+               </div>
+               <div class="field">
+                 <div class="control">
+                   <input class="input is-large" type="password" name="password" id="password" placeholder="mypassword">
+                 </div>
+               </div>
+
+                <button type="submit" class="button is-link">Login</button>
+
+                <% if (message) { %>
+                  <p id="msg2" class="help is-danger">
+                <%= message %>
+                  </p>
+             <% } %>
+
+             </form>
+
             </div>
-         </div>
-      </section>
+          </div>
+
+      </div>
    </body>
 </html>
