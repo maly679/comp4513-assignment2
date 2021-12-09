@@ -24,7 +24,7 @@ const logout = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "https://comp4513-assignment2.herokuapp.com/api/user/1",
+      url: "https://comp4513-assignment2.herokuapp.com/user",
     }).then((res) => {
       setUserData(res.data);
       console.log(res.data);
