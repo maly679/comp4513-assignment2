@@ -1,7 +1,7 @@
 import HomePage from "./components/HomePage";
 import DefaultPage from "./components/DefaultPage";
 import PlayDetailPage from "./components/PlayDetailPage";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
@@ -16,7 +16,7 @@ function App() {
 
 
 const logout = () => {
-  window.location.assign('https://comp4513-assignment2.herokuapp.com/logout');
+  window.location.assign('http://localhost:8080/logout');
 }
 
   useEffect(() => {
@@ -24,69 +24,40 @@ const logout = () => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: "https://comp4513-assignment2.herokuapp.com/user",
+      url: "http://localhost:8080/user",
     }).then((res) => {
       setUserData(res.data);
       console.log(res.data);
     });
-
+console.log(userData);
  
 },  []);
 
-//http://localhost:8080/user
-
-// const populateAllPlays = () => {
-//   Axios({
-//     method: "GET",
-//     withCredentials: true,
-//     url: "http://localhost:8080/api/list",
-//   }).then((res) => {
-//     console.log(res.data);
-//     localStorage.setItem("playData", JSON.stringify(res.data));
-//     setData(res.data);
-//     console.log(res.data);
-//   });  
-// }
-
-useEffect(() => {
-
-
+const populateAllPlays = () => {
   Axios({
     method: "GET",
     withCredentials: true,
-    url: "https://comp4513-assignment2.herokuapp.com/api/list",
+    url: "http://comp4513-assignment2.herokuapp.com/api/list",
   }).then((res) => {
     console.log(res.data);
     localStorage.setItem("playData", JSON.stringify(res.data));
     setData(res.data);
     console.log(res.data);
   });  
+}
+
+useEffect(() => {
+
+
+  populateAllPlays();
 
   if (localStorage.getItem("playData") == null) {
-    // populateAllPlays();
+    populateAllPlays();
   } else {
     setData(JSON.parse(localStorage.getItem("playData")));
   }
 
-  // invoke the async function
 },  []);
-
-// useEffect(() => {
-// const getUserData = async () => {
-//   try {
-//     const url =  "http://localhost:8080/user";
-//     const response = await fetch(url);
-//     localStorage.setItem("userData", JSON.stringify(userData));
-//   } catch(err) {
-//     console.error(err);
-//   }
-// };
-// if (localStorage.getItem("userData") == null) {
-//   getUserData();
-// } else {
-//   setData(JSON.parse(localStorage.getItem("userData")));
-// }
-// });
 
   const addLikes = (play) => {
     let temp = [...like];
@@ -118,10 +89,10 @@ useEffect(() => {
   const updateFaveBox = () => {
     setShowFavorites(!showFavorites);
   }
-  
+  console.log(userData);
   return (
     <main>
-      <BrowserRouter basename='/'>
+      <HashRouter basename='/'>
       <Route path="/" exact component={HomePage} />
       <Route path="/home" exact component={HomePage}/>
         <Route path="/default">
@@ -167,7 +138,7 @@ useEffect(() => {
         />
   
       </Route>
-     </ BrowserRouter>
+     </ HashRouter>
     </main>
   );
 }

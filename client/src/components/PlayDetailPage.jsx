@@ -80,7 +80,7 @@ const PlayDetailPage = (props) => {
 
     return (
       <div className="playDetailsPage">
-        <HeaderBar userData = {props.location.state.userData} logout = {props.location.state.logout}></HeaderBar>
+         <HeaderBar userData = {location.state.userInfo.userData} logout = {location.state.userInfo.logout}/> 
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
