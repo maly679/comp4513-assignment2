@@ -25,9 +25,7 @@ function App() {
       url: "https://comp4513-assignment2.herokuapp.com/user",
     }).then((res) => {
       setUserData(res.data);
-      console.log(res.data);
     });
-    console.log(userData);
   }, []);
 
   const populateAllPlays = () => {
