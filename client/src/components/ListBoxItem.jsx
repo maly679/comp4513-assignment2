@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import Axios from "axios";
 
 const ListBoxItem = (props) => {
   const add = () => {
@@ -8,35 +9,36 @@ const ListBoxItem = (props) => {
   };
 
   const currentPlay = () => {
-    
     props.updateCurrent(props.play);
-    const url =
-      "https://www.randyconnolly.com/funwebdev/3rd/api/shakespeare/play.php?name=" +
-      props.play.id;
-    fetch(url)
-      .then((response) => response.json())
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: `https://comp4513-assignment2.herokuapp.com/api/play/${props.play.id}`,
+    })
+      .then((response) => response.JSON())
       .then((data) => {
         localStorage.setItem("playInfo", JSON.stringify(data));
       });
   };
 
-  const userInfo = {userData: props.userData, logout: props.logout};
+  const userInfo = { userData: props.userData, logout: props.logout };
 
   return (
     <div id="listBoxItems">
-      <p id="playInfoTitle">{props.play.title}</p>c
+      <p id="playInfoTitle">{props.play.title}</p>
       <p id="playDate">{props.play.likelyDate}</p>
       <div id="playListButtons">
-
-        <CSSTransition in={true}
-        timeout={10000}
-        classNames="fade"
-        appear={true}>
-        <button type="button" id="likeButton" onClick={add}>
-          ❤
-        </button>
+        <CSSTransition
+          in={true}
+          timeout={10000}
+          classNames="fade"
+          appear={true}
+        >
+          <button type="button" id="likeButton" onClick={add}>
+            ❤
+          </button>
         </CSSTransition>
-        <Link to={{ pathname: "/playDetails", state: {userInfo: userInfo}}}>
+        <Link to={{ pathname: "/playDetails", state: { userInfo: userInfo } }}>
           <button type="button" id="viewButton" onClick={currentPlay}>
             View
           </button>

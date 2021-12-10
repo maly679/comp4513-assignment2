@@ -5,18 +5,15 @@ import FilterBox from "./FilterBox";
 import ListBox from "./ListBox";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
-import loadingGif from '../loadingGif/giphy.gif';
 
 const DefaultPage = (props) => {
-
   const location = useLocation();
-    //check if matches are found from filter.
+  //check if matches are found from filter.
   const [matchesFound, setMatchesFound] = useState(true);
   useEffect(() => {
     if (location.state.filters) {
       props.setFilteredData(location.state.filters);
-    }    
+    }
   }, []);
 
   let title = "";
@@ -216,7 +213,7 @@ const DefaultPage = (props) => {
 
   return (
     <div className="defaultPage">
-      <HeaderBar userData = {props.userData} logout = {props.logout}/>
+      <HeaderBar userData={props.userData} logout={props.logout} />
       <div id="defaultPageInfoBox">
         {props.showFavorites && props.isChecked === false ? (
           <div id="defaultFavoriteBox">
@@ -239,8 +236,8 @@ const DefaultPage = (props) => {
           updateFaveBox={props.updateFaveBox}
         />
         <ListBox
-          userData = {props.userData} 
-          logout = {props.logout}
+          userData={props.userData}
+          logout={props.logout}
           plays={props.plays}
           addToLike={props.addToLike}
           removeFromLike={props.removeFromLike}
@@ -249,10 +246,8 @@ const DefaultPage = (props) => {
           sortTitle={sortTitle}
           sortYear={sortYear}
         />
-     
       </div>
     </div>
-        
   );
 };
 
