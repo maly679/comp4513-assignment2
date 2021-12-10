@@ -5,8 +5,6 @@ import FilterBox from "./FilterBox";
 import ListBox from "./ListBox";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { CSSTransition } from "react-transition-group";
-import loadingGif from '../loadingGif/giphy.gif';
 
 const DefaultPage = (props) => {
 

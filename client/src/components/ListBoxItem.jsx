@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import Axios from "axios";
 
 const ListBoxItem = (props) => {
   const add = () => {
@@ -10,15 +11,16 @@ const ListBoxItem = (props) => {
   const currentPlay = () => {
     
     props.updateCurrent(props.play);
-    const url =
-      "https://www.randyconnolly.com/funwebdev/3rd/api/shakespeare/play.php?name=" +
-      props.play.id;
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        localStorage.setItem("playInfo", JSON.stringify(data));
-      });
-  };
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url:  `http://comp4513-assignment2.herokuapp.com/api/play/${props.play.id}`,
+    }).then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem("playInfo", JSON.stringify(data));
+    });
+};
+
 
   const userInfo = {userData: props.userData, logout: props.logout};
 

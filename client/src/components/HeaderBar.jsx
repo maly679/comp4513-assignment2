@@ -29,8 +29,9 @@ const HeaderBar = (props) => {
   const handleAboutClose = () => {
     setIsAboutModalVisible(false);
   };
-  
-  const userAPILink = `http://comp4513-assignment2.herokuapp.com/api/user/${props.userData.id}`;  
+  console.log("yes");
+  console.log(props.userData);
+  const userAPILink = `http://comp4513-assignment2.herokuapp.com/user/${props.userData.id}`;  
   const current = 'menu';
   
   return (

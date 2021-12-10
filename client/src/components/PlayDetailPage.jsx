@@ -54,10 +54,11 @@ const PlayDetailPage = (props) => {
 
   useEffect((props) => {
     const getInfo = async () => {
+
+
       try {
         const url =
-          "https://www.randyconnolly.com/funwebdev/3rd/api/shakespeare/play.php?name=" +
-          props.current.id;
+          `http://comp4513-assignment2.herokuapp.com/api/play/${props.current.id}`;
         const response = await fetch(url);
         const data = await response.json();
         localStorage.setItem("playInfo", JSON.stringify(data));

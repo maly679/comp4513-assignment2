@@ -27,9 +27,8 @@ const logout = () => {
       url: "http://localhost:8080/user",
     }).then((res) => {
       setUserData(res.data);
-      console.log(res.data);
     });
-console.log(userData);
+
  
 },  []);
 
@@ -42,7 +41,6 @@ const populateAllPlays = () => {
     console.log(res.data);
     localStorage.setItem("playData", JSON.stringify(res.data));
     setData(res.data);
-    console.log(res.data);
   });  
 }
 
