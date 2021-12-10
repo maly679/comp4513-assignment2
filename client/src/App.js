@@ -15,7 +15,11 @@ function App() {
   const [showFavorites, setShowFavorites] = useState(true);
 
   const logout = () => {
-    window.location.assign("https://comp4513-assignment2.herokuapp.com/logout");
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://comp4513-assignment2.herokuapp.com/logout",
+    }).then((res) => {});
   };
 
   useEffect(() => {
