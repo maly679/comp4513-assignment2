@@ -1,7 +1,7 @@
 import HomePage from "./components/HomePage";
 import DefaultPage from "./components/DefaultPage";
 import PlayDetailPage from "./components/PlayDetailPage";
-import { HashRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
@@ -121,7 +121,7 @@ useEffect(() => {
   
   return (
     <main>
-      <HashRouter basename='/'>
+      <BrowserRouter basename='/'>
       <Route path="/" exact component={HomePage} />
       <Route path="/home" exact component={HomePage}/>
         <Route path="/default">
@@ -167,7 +167,7 @@ useEffect(() => {
         />
   
       </Route>
-     </ HashRouter>
+     </ BrowserRouter>
     </main>
   );
 }
