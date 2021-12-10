@@ -13,7 +13,7 @@ const ListBoxItem = (props) => {
     Axios({
       method: "GET",
       withCredentials: true,
-      url: `http://comp4513-assignment2.herokuapp.com/api/play/${props.play.id}`,
+      url: `https://comp4513-assignment2.herokuapp.com/api/play/${props.play.id}`,
     })
       .then((response) => response.json())
       .then((data) => {
