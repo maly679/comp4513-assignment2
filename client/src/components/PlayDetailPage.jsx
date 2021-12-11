@@ -80,7 +80,7 @@ const PlayDetailPage = (props) => {
       <div className="playDetailsPage">
         <HeaderBar
           userData={location.state.userInfo.userData}
-          logout={location.state.userInfo.logout}
+          // logout={location.state.userInfo.logout}
         />
 
         <div id="playDetailsBox">

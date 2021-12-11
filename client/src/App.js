@@ -1,7 +1,7 @@
 import HomePage from "./components/HomePage";
 import DefaultPage from "./components/DefaultPage";
 import PlayDetailPage from "./components/PlayDetailPage";
-import { BrowserRouter, Route } from "react-router-dom";
+import { HashRouter, Route } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 
@@ -15,11 +15,7 @@ function App() {
   const [showFavorites, setShowFavorites] = useState(true);
 
   const logout = () => {
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://comp4513-assignment2.herokuapp.com/logout",
-    }).then((res) => {});
+    window.location.assign("https://comp4513-assignment2.herokuapp.com/logout");
   };
 
   useEffect(() => {
@@ -86,7 +82,7 @@ function App() {
   console.log(userData);
   return (
     <main>
-      <BrowserRouter basename="/">
+      <HashRouter basename="/">
         <Route path="/" exact component={HomePage} />
         <Route path="/home" exact component={HomePage} />
         <Route path="/default">
@@ -122,7 +118,7 @@ function App() {
             updateFaveBox={updateFaveBox}
           />
         </Route>
-      </BrowserRouter>
+      </HashRouter>
     </main>
   );
 }
