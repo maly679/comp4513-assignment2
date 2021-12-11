@@ -3,7 +3,7 @@ import React from "react";
 const CharactersTab = (props) => {  
 
   let i = [];
-  i = JSON.parse(localStorage.getItem("playInfo"));
+  i = JSON.parse(localStorage.getItem("playInfo"))[0].playText;
   const personas = i.persona;
 
   return (

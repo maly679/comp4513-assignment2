@@ -65,7 +65,7 @@ const Tabs = (props) => {
           ) : props.tab === "Text" ? (
             <TextTab
               current={props.current}
-              playInfo={JSON.parse(localStorage.getItem("playInfo"))}
+              playInfo={JSON.parse(localStorage.getItem("playInfo"))[0].playText}
               //playInfo={props.playInfo}
               currentAct={props.currentAct}
               currentScene={props.currentScene}

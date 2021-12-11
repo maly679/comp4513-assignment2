@@ -5,6 +5,7 @@ import Tabs from "./TabComponent/Tabs";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "../App.css";
+import Axios from "axios";
 
 const PlayDetailPage = (props) => {
   const [tab, setTab] = useState("Details");
@@ -52,20 +53,17 @@ const PlayDetailPage = (props) => {
     setHighlightedWord(e.target.value);
   };
 
-  useEffect((props) => {
-    const getInfo = async () => {
-      try {
-        const url = `https://comp4513-assignment2.herokuapp.com/api/play/${props.current.id}`;
-        const response = await fetch(url);
-        const data = await response.json();
-        localStorage.setItem("playInfo", JSON.stringify(data));
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    // invoke the async function
-    getInfo();
-  }, []);
+
+  Axios({
+    method: "GET",
+    withCredentials: true,
+    url: `https://comp4513-assignment2.herokuapp.com/api/play/${props.current.id}`,
+  }).then((res) => {
+    console.log(res.data);
+    localStorage.setItem("playInfo", JSON.stringify(res.data));
+    console.log(res.data);
+  });
+
 
   const updateBoxForFave = () => {
     props.updateFaveBox();
@@ -74,14 +72,12 @@ const PlayDetailPage = (props) => {
 
   if (tab === "Text") {
     let i = [];
-    i.push(JSON.parse(localStorage.getItem("playInfo")));
-
+    // i.push(JSON.parse(localStorage.getItem("playInfo")));
+    i[0] = JSON.parse(localStorage.getItem("playInfo"))[0].playText;
+    console.log("yes5");
     return (
       <div className="playDetailsPage">
-        <HeaderBar
-          userData={location.state.userInfo.userData}
-          // logout={location.state.userInfo.logout}
-        />
+         <HeaderBar userData = {location.state.userInfo.userData} logout = {location.state.userInfo.logout}/> 
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
@@ -204,10 +200,7 @@ const PlayDetailPage = (props) => {
   } else {
     return (
       <div className="playDetailsPage">
-        <HeaderBar
-          userData={location.state.userInfo.userData}
-          logout={location.state.userInfo.logout}
-        />
+        <HeaderBar userData = {location.state.userInfo.userData} logout = {location.state.userInfo.logout}/> 
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
