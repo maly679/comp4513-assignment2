@@ -108,26 +108,49 @@ const HeaderBar = (props) => {
           <p>Logged in User</p>
         </a>
         <h2>Reference Links</h2>
-        <a href="https://blog.logrocket.com/how-to-build-tab-component-react/">
-          <p>Building your own tab components</p>
-        </a>
 
-        <a href="https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react">
-          <p>How to hide or show elements in react</p>
-        </a>
-        <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar">
-          <p>Custom scrollbars with webkit</p>
-        </a>
-        <a href="https://www.w3schools.com/howto/howto_css_full_page.asp">
-          <p>How to add full page background image</p>
-        </a>
+        <div className="referenceBox"> 
+          <a href="https://blog.logrocket.com/how-to-build-tab-component-react/">
+            <p>Building your own tab components</p>
+          </a>
 
-        <a href="https://stackoverflow.com/questions/4137255/checkboxes-in-web-pages-how-to-make-them-bigger">
-          <p>How to make checkboxes bigger with webkit</p>
-        </a>
-        <a href="https://expressjs.com/en/resources/middleware/cors.html">
-          <p>Express cors</p>
-        </a>
+          <a href="https://stackoverflow.com/questions/24502898/show-or-hide-element-in-react">
+            <p>How to hide or show elements in react</p>
+          </a>
+          <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_scrollbar">
+            <p>Custom scrollbars with webkit</p>
+          </a>
+          <a href="https://www.w3schools.com/howto/howto_css_full_page.asp">
+            <p>How to add full page background image</p>
+          </a>
+
+          <a href="https://stackoverflow.com/questions/4137255/checkboxes-in-web-pages-how-to-make-them-bigger">
+            <p>How to make checkboxes bigger with webkit</p>
+          </a>
+          <a href="https://expressjs.com/en/resources/middleware/cors.html">
+            <p>Express cors</p>
+          </a>
+
+          <a href="https://ant.design/components/form/">
+            <p> Antd form component </p>
+          </a>
+          <a href="https://ant.design/components/input/">
+            <p> Antd input component </p>
+          </a>
+          <a href="https://ant.design/components/menu/">
+            <p> Antd menu component </p>
+          </a>
+          <a href="https://ant.design/components/message/">
+            <p> Antd alert message component</p>
+          </a>
+
+          <a href="https://medium.com/@joseph.a.guzzardo/creating-a-login-with-bulma-2ab75b9695ac">
+            <p> Bulma component for ejs file </p>
+          </a>
+          
+        </div>
+
+
       </Modal>
 
       <Modal

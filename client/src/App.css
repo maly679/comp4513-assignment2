@@ -5,6 +5,14 @@ main {
 
 @import '~antd/dist/antd.css';
 
+.referenceBox {
+ 
+  padding: 1rem 2rem 2rem 1rem;
+  overflow-x: hidden;
+  overflow-y:auto;
+  
+}
+
 .App {
   text-align: center;
   height: 100vh;
