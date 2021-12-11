@@ -219,6 +219,7 @@ const DefaultPage = (props) => {
           <div id="defaultFavoriteBox">
             {" "}
             <FavoriteBox
+              userData={props.userData}
               plays={props.likedPlays}
               removeFromLike={props.removeFromLike}
               updateCurrent={props.updateCurrent}
