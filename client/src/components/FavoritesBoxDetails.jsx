@@ -9,6 +9,7 @@ const FavoriteBoxDetails = (props) => {
       <div id="favoritesList">
         {props.plays.map((p, index) => (
           <FavoriteItemDetails
+            userData={props.userData}
             play={p}
             removeFromLike={props.removeFromLike}
             updateCurrent={props.updateCurrent}

@@ -105,6 +105,7 @@ function App() {
         </Route>
         <Route path="/playDetails">
           <PlayDetailPage
+            userData={userData}
             plays={data}
             likedPlays={like}
             addToLike={addLikes}

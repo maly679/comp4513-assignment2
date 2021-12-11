@@ -24,9 +24,10 @@ const FavoriteItemDetails = (props) => {
     props.updateTab();
   };
 
+  const userInfo = { userData: props.userData, logout: props.logout };
   return (
     <div id="favoriteItem">
-      <Link to="/playDetails">
+      <Link to={{ pathname: "/playDetails", state: { userInfo: userInfo } }}>
         <p onClick={updateCurrentPlay}> {props.play.title} </p>
       </Link>
 

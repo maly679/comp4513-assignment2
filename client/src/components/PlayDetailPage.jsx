@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeaderBar from "./HeaderBar";
-import FavoriteBoxDetails from "./FavoritesBoxDetails";
+import FavoritesBoxDetails from "./FavoritesBoxDetails";
 import Tabs from "./TabComponent/Tabs";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -53,7 +53,6 @@ const PlayDetailPage = (props) => {
     setHighlightedWord(e.target.value);
   };
 
-
   Axios({
     method: "GET",
     withCredentials: true,
@@ -63,7 +62,6 @@ const PlayDetailPage = (props) => {
     localStorage.setItem("playInfo", JSON.stringify(res.data));
     console.log(res.data);
   });
-
 
   const updateBoxForFave = () => {
     props.updateFaveBox();
@@ -77,12 +75,13 @@ const PlayDetailPage = (props) => {
     console.log("yes5");
     return (
       <div className="playDetailsPage">
-         <HeaderBar userData = {location.state.userInfo.userData} logout = {location.state.userInfo.logout}/> 
+        <HeaderBar userData={props.userData} logout={props.logout} />
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
             <div id="detailsFavoriteList">
-              <FavoriteBoxDetails
+              <FavoritesBoxDetails
+                userData={props.userData}
                 plays={props.likedPlays}
                 removeFromLike={props.removeFromLike}
                 updateCurrent={props.updateCurrent}
@@ -200,12 +199,16 @@ const PlayDetailPage = (props) => {
   } else {
     return (
       <div className="playDetailsPage">
-        <HeaderBar userData = {location.state.userInfo.userData} logout = {location.state.userInfo.logout}/> 
+        <HeaderBar
+          userData={location.state.userInfo.userData}
+          logout={location.state.userInfo.logout}
+        />
 
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
             <div id="detailsFavoriteList">
-              <FavoriteBoxDetails
+              <FavoritesBoxDetails
+                userData={props.userData}
                 plays={props.likedPlays}
                 removeFromLike={props.removeFromLike}
                 updateCurrent={props.updateCurrent}
