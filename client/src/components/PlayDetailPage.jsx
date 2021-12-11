@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeaderBar from "./HeaderBar";
-import FavoritesBoxDetails from "./FavoritesBoxDetails";
+import FavoritesBox from "./FavoritesBox";
 import Tabs from "./TabComponent/Tabs";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
@@ -80,7 +80,7 @@ const PlayDetailPage = (props) => {
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
             <div id="detailsFavoriteList">
-              <FavoritesBoxDetails
+              <FavoritesBox
                 userData={props.userData}
                 plays={props.likedPlays}
                 removeFromLike={props.removeFromLike}
@@ -207,7 +207,7 @@ const PlayDetailPage = (props) => {
         <div id="playDetailsBox">
           {props.showFavorites && props.isChecked === false ? (
             <div id="detailsFavoriteList">
-              <FavoritesBoxDetails
+              <FavoritesBox
                 userData={props.userData}
                 plays={props.likedPlays}
                 removeFromLike={props.removeFromLike}
